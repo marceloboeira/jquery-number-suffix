@@ -1,0 +1,19 @@
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="src/jquery.number.prefix.src.js"></script>
+
+<script>
+$(function(){
+	
+	$('#number').numberPrefix({target:'#t1'});
+	console.log($().numberPrefix(1000000));
+	
+
+});
+</script>
+
+<center>
+	<label><h1>Type an big integer:<h1></label>
+	<input type="text" id="number">
+	<h3> The Prefix is: <span id="t1"></span></h3>
+
+</center>
