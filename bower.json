@@ -1,0 +1,29 @@
+{
+  "name": "jquery-number-suffix",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vimia/jquery-number-suffix",
+  "authors": [
+    "Marcelo Boeira <marceloboeira@live.com>"
+  ],
+  "description": "An awesome Number Suffix Generator. Ex: 1K, 2.3M, 300K Followers...",
+  "main": "src/jquery.number.suffix.src.js",
+  "keywords": [
+    "jQuery",
+    "Number",
+    "Suffix",
+    "Metric",
+    "Kilo",
+    "Mega",
+    "Giga..."
+  ],
+  "license": "MIT",
+  
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+
+}
