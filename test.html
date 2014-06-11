@@ -1,19 +1,24 @@
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="src/jquery.number.prefix.src.js"></script>
+<script src="src/jquery.number.suffix.src.js"></script>
 
 <script>
 $(function(){
 	
-	$('#number').numberPrefix({target:'#t1'});
-	console.log($().numberPrefix(1000000));
+	$('#n').numberSuffix({target:'#t1',unity:' follower',unityPlural:' followers'});
+	console.log();
 	
+
+	var tests = [-1001, -1, 0, 1, 2.5, 999, 1234, 
+           			1234.5, 1000001, Math.pow(10,9), Math.pow(10,12)];
+ 	tests.forEach(function(x){ 
+ 		console.log(x,$().numberSuffix(x));
+ 	})
 
 });
 </script>
 
 <center>
-	<label><h1>Type an big integer:<h1></label>
-	<input type="text" id="number">
-	<h3> The Prefix is: <span id="t1"></span></h3>
-
+	<label><h1>Type an big number:<h1></label>
+	<input type="text" id="n">
+	<h3> The Formated number is is: <span id="t1"></span></h3>
 </center>

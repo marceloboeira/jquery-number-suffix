@@ -1,4 +1,4 @@
-jquery-number-prefix
+jquery-number-suffix
 ====================
 
-Format number  prefix with K, M, G, ... Example: 12.5K, 3M, 2G ...
+Coming soon!
