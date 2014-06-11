@@ -9,6 +9,51 @@
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
     <title>jquery-number-suffix</title>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.number.suffix.src.js"></script>
+    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+
+<script>
+$(function(){
+  var ghId = '04228102bf9749e52677';
+  var ghSecret = '411e057ad99f55c5c72aee8dd578c3ff94f83687';
+
+
+var forksCount = 0, starsCount = 0, watchersCount = 0, issuesCount = 0;
+
+$('#n').numberSuffix({target:'#t1',unity:' follower',unityPlural:' followers'});
+
+$("#gh").on('change',function(){
+  var th = this;
+  var user = th.value;
+  var nurl = 'https://api.github.com/users/' + user + '/repos'
+  console.log('New request...');
+  $.ajax({url: nurl,
+    data: {client_id: ghId,
+               client_secret: ghSecret},   
+        dataType: 'jsonp',
+        jsonp: 'callback',
+        success: function(r){
+            var data = r.data;
+            forksCount =  starsCount = watchersCount = issuesCount = 0;
+            for (i in data) {
+              var repo = data[i];
+        forksCount += repo.forks_count;
+              starsCount += repo.stargazers_count
+              watchersCount += repo.watchers_count;
+              issuesCount += repo.open_issues_count;
+          }
+          $("#t2").html(" <i class='fa fa-code-fork'></i> Forks: " + $().numberSuffix(forksCount) +
+                  " | <i class='fa fa-star'></i> Stars: " + $().numberSuffix(starsCount) +  
+                  " | <i class='fa fa-eye'></i> Watchers: " + $().numberSuffix(watchersCount) +
+                  " | <i class='fa fa-stack-overflow'></i> Issues: " + $().numberSuffix(issuesCount));
+        }
+    }); 
+});
+
+});
+</script>
   </head>
 
   <body>
@@ -32,9 +77,15 @@
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
         <h1>
-<a name="jquery-number-suffix" class="anchor" href="#jquery-number-suffix"><span class="octicon octicon-link"></span></a>jquery-number-suffix</h1>
-
-<p>Coming soon!</p>
+        <a name="jquery-number-suffix" class="anchor" href="#jquery-number-suffix"><span class="octicon octicon-link"></span></a>Example</h1>
+        <center>
+            <label><h2>Type a Github user/team and hit enter<h2></label>
+            <input type="text" id="gh">
+            <h3> Stats: </h3>
+            <span id="t2">
+              
+            </span>
+        </center>
       </section>
     </div>
 
