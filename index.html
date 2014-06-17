@@ -1,103 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
   <head>
-    <meta charset='utf-8' />
-    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="jquery-number-suffix : Format number  suffix with K, M, G, ... Example: 12.5K followers, 3M likes, 2G bytes ..." />
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jquery-number-suffix by vimia</title>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>jquery-number-suffix</title>
-
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="javascripts/jquery.number.suffix.src.js"></script>
-    <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
-
-<script>
-$(function(){
-  var ghId = '04228102bf9749e52677';
-  var ghSecret = '411e057ad99f55c5c72aee8dd578c3ff94f83687';
-
-
-var forksCount = 0, starsCount = 0, watchersCount = 0, issuesCount = 0;
-
-$('#n').numberSuffix({target:'#t1',unity:' follower',unityPlural:' followers'});
-
-$("#gh").on('change',function(){
-  var th = this;
-  var user = th.value;
-  var nurl = 'https://api.github.com/users/' + user + '/repos'
-  console.log('New request...');
-  $.ajax({url: nurl,
-    data: {client_id: ghId,
-               client_secret: ghSecret},   
-        dataType: 'jsonp',
-        jsonp: 'callback',
-        success: function(r){
-            var data = r.data;
-            forksCount =  starsCount = watchersCount = issuesCount = 0;
-            for (i in data) {
-              var repo = data[i];
-        forksCount += repo.forks_count;
-              starsCount += repo.stargazers_count
-              watchersCount += repo.watchers_count;
-              issuesCount += repo.open_issues_count;
-          }
-          $("#t2").html(" <i class='fa fa-code-fork'></i> Forks: " + $().numberSuffix(forksCount) +
-                  " | <i class='fa fa-star'></i> Stars: " + $().numberSuffix(starsCount) +  
-                  " | <i class='fa fa-eye'></i> Watchers: " + $().numberSuffix(watchersCount) +
-                  " | <i class='fa fa-stack-overflow'></i> Issues: " + $().numberSuffix(issuesCount));
-        }
-    }); 
-});
-
-});
-</script>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
   </head>
-
   <body>
+    <div class="wrapper">
+      <header>
+        <h1>jquery-number-suffix</h1>
+        <p>Format number  suffix with K, M, G, ... Example: 12.5K followers, 3M likes, 2G bytes ...</p>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/vimia/jquery-number-suffix">View on GitHub</a>
+        <p class="view"><a href="https://github.com/vimia/jquery-number-suffix">View the Project on GitHub <small>vimia/jquery-number-suffix</small></a></p>
 
-          <h1 id="project_title">jquery-number-suffix</h1>
-          <h2 id="project_tagline">Format number  suffix with K, M, G, ... Example: 12.5K followers, 3M likes, 2G bytes ...</h2>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/vimia/jquery-number-suffix/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/vimia/jquery-number-suffix/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
+        <ul>
+          <li><a href="https://github.com/vimia/jquery-number-suffix/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/vimia/jquery-number-suffix/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/vimia/jquery-number-suffix">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
         <h1>
-        <a name="jquery-number-suffix" class="anchor" href="#jquery-number-suffix"><span class="octicon octicon-link"></span></a>Example</h1>
-        <center>
-            <label><h2>Type a Github user/team and hit enter<h2></label>
-            <input type="text" id="gh">
-            <h3> Stats: </h3>
-            <span id="t2">
-              
-            </span>
-        </center>
-      </section>
-    </div>
+<a name="jquery-number-suffix" class="anchor" href="#jquery-number-suffix"><span class="octicon octicon-link"></span></a>jquery-number-suffix</h1>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">jquery-number-suffix maintained by <a href="https://github.com/vimia">vimia</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+<p>Coming soon!</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/vimia">vimia</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-
+    <script src="javascripts/scale.fix.js"></script>
     
-
   </body>
 </html>
